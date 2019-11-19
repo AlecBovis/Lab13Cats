@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,16 @@
 		7D4B9B19238468A90041EFFD /* instaCat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B9B17238468A90041EFFD /* instaCat.xcdatamodeld */; };
 		7D4B9B1B238468AB0041EFFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B9B1A238468AB0041EFFD /* Assets.xcassets */; };
 		7D4B9B1E238468AB0041EFFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B9B1C238468AB0041EFFD /* LaunchScreen.storyboard */; };
+		7D4B9B26238469910041EFFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B9B25238469910041EFFD /* GoogleService-Info.plist */; };
+		7D4B9B28238474300041EFFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B9B27238474300041EFFD /* LoginViewController.swift */; };
+		7D4B9B2C2384839B0041EFFD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B9B2B2384839B0041EFFD /* ImageCollectionViewCell.swift */; };
+		7D4B9B2E238487390041EFFD /* CustomImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B9B2D238487390041EFFD /* CustomImageFlowLayout.swift */; };
+		7D4B9B30238491040041EFFD /* CatInsta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B9B2F238491040041EFFD /* CatInsta.swift */; };
+		E75A7654EDF5242A409B3F77 /* Pods_instaCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1526F654B673BE8230514384 /* Pods_instaCat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1526F654B673BE8230514384 /* Pods_instaCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instaCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4B9B0D238468A90041EFFD /* instaCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4B9B10238468A90041EFFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D4B9B12238468A90041EFFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +31,13 @@
 		7D4B9B1A238468AB0041EFFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D4B9B1D238468AB0041EFFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D4B9B1F238468AB0041EFFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D4B9B25238469910041EFFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7D4B9B27238474300041EFFD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7D4B9B2B2384839B0041EFFD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D4B9B2D238487390041EFFD /* CustomImageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageFlowLayout.swift; sourceTree = "<group>"; };
+		7D4B9B2F238491040041EFFD /* CatInsta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInsta.swift; sourceTree = "<group>"; };
+		B0000420A0B5ADEF42FCFEC0 /* Pods-instaCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaCat.release.xcconfig"; path = "Target Support Files/Pods-instaCat/Pods-instaCat.release.xcconfig"; sourceTree = "<group>"; };
+		C69B0378DCCA6EC25E6B3A3D /* Pods-instaCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaCat.debug.xcconfig"; path = "Target Support Files/Pods-instaCat/Pods-instaCat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75A7654EDF5242A409B3F77 /* Pods_instaCat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FB6E8F21C7FE2F8B3046969 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C69B0378DCCA6EC25E6B3A3D /* Pods-instaCat.debug.xcconfig */,
+				B0000420A0B5ADEF42FCFEC0 /* Pods-instaCat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		63E7D873CC9F58A8AFA57E05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1526F654B673BE8230514384 /* Pods_instaCat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D4B9B04238468A90041EFFD = {
 			isa = PBXGroup;
 			children = (
 				7D4B9B0F238468A90041EFFD /* instaCat */,
 				7D4B9B0E238468A90041EFFD /* Products */,
+				5FB6E8F21C7FE2F8B3046969 /* Pods */,
+				63E7D873CC9F58A8AFA57E05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +90,7 @@
 		7D4B9B0F238468A90041EFFD /* instaCat */ = {
 			isa = PBXGroup;
 			children = (
+				7D4B9B25238469910041EFFD /* GoogleService-Info.plist */,
 				7D4B9B10238468A90041EFFD /* AppDelegate.swift */,
 				7D4B9B12238468A90041EFFD /* ViewController.swift */,
 				7D4B9B14238468A90041EFFD /* Main.storyboard */,
@@ -63,6 +98,10 @@
 				7D4B9B1C238468AB0041EFFD /* LaunchScreen.storyboard */,
 				7D4B9B1F238468AB0041EFFD /* Info.plist */,
 				7D4B9B17238468A90041EFFD /* instaCat.xcdatamodeld */,
+				7D4B9B27238474300041EFFD /* LoginViewController.swift */,
+				7D4B9B2B2384839B0041EFFD /* ImageCollectionViewCell.swift */,
+				7D4B9B2D238487390041EFFD /* CustomImageFlowLayout.swift */,
+				7D4B9B2F238491040041EFFD /* CatInsta.swift */,
 			);
 			path = instaCat;
 			sourceTree = "<group>";
@@ -74,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D4B9B22238468AB0041EFFD /* Build configuration list for PBXNativeTarget "instaCat" */;
 			buildPhases = (
+				98022F7ACEEF64BD37E1D2C5 /* [CP] Check Pods Manifest.lock */,
 				7D4B9B09238468A90041EFFD /* Sources */,
 				7D4B9B0A238468A90041EFFD /* Frameworks */,
 				7D4B9B0B238468A90041EFFD /* Resources */,
+				40222E5AD1AF70496074C1FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4B9B1E238468AB0041EFFD /* LaunchScreen.storyboard in Resources */,
+				7D4B9B26238469910041EFFD /* GoogleService-Info.plist in Resources */,
 				7D4B9B1B238468AB0041EFFD /* Assets.xcassets in Resources */,
 				7D4B9B16238468A90041EFFD /* Main.storyboard in Resources */,
 			);
@@ -133,11 +175,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40222E5AD1AF70496074C1FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instaCat/Pods-instaCat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instaCat/Pods-instaCat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-instaCat/Pods-instaCat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98022F7ACEEF64BD37E1D2C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-instaCat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D4B9B09238468A90041EFFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4B9B2E238487390041EFFD /* CustomImageFlowLayout.swift in Sources */,
+				7D4B9B30238491040041EFFD /* CatInsta.swift in Sources */,
+				7D4B9B28238474300041EFFD /* LoginViewController.swift in Sources */,
+				7D4B9B2C2384839B0041EFFD /* ImageCollectionViewCell.swift in Sources */,
 				7D4B9B13238468A90041EFFD /* ViewController.swift in Sources */,
 				7D4B9B11238468A90041EFFD /* AppDelegate.swift in Sources */,
 				7D4B9B19238468A90041EFFD /* instaCat.xcdatamodeld in Sources */,
@@ -284,6 +372,7 @@
 		};
 		7D4B9B23238468AB0041EFFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69B0378DCCA6EC25E6B3A3D /* Pods-instaCat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +391,7 @@
 		};
 		7D4B9B24238468AB0041EFFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0000420A0B5ADEF42FCFEC0 /* Pods-instaCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
