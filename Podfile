@@ -8,6 +8,7 @@ target 'instaCat' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'SDWebImage/WebP'
+  pod 'Firebase/Storage'
   # Pods for instaCat
 	
 

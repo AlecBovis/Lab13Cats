@@ -10,9 +10,10 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 import SDWebImage
 
-class ViewController: UIViewController, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
@@ -25,8 +26,13 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     
     var dbRef: DatabaseReference!
     
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
+        
         dbRef = Database.database().reference().child("images")
         loadDB()
         customImageFlowLayout = CustomImageFlowLayout()
@@ -84,6 +90,55 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         cell.imageView.sd_setImage(with: URL(string: image.url), placeholderImage:UIImage(named: "image1"))
         return cell
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        
+        dismiss(animated: true, completion: nil)
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            var data = Data()
+            data = pickedImage.jpegData(compressionQuality: 0.8)!
+            
+            let imageRef = Storage.storage().reference().child("images/" + randomString(20));
+            
+            _ = imageRef.putData(data, metadata: nil) { (metadata, error) in
+                guard let metadata = metadata else {
+                    return
+                }
+                let downloadURL = metadata.storageReference.self
+                print(downloadURL?.debugDescription ?? "")
+                
+                let key = self.dbRef.childByAutoId().key
+                let image = ["url": downloadURL?.debugDescription]
+                
+                let childUpdates = ["/\(key)": image]
+                self.dbRef.updateChildValues(childUpdates)
+            }
+        }
+      
+    }
+    
+    @IBAction func loadImageButtonClicked(_ sender: Any) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func randomString(_ length: Int) -> String  {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        return randomString
+    }
 }
 
- 
+
