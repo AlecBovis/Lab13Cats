@@ -117,7 +117,7 @@ class ViewController: UIViewController, UICollectionViewDataSource,UIImagePicker
         }
       
     }
-    
+      
     @IBAction func loadImageButtonClicked(_ sender: Any) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
